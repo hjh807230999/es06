@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+        .wrap #input{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            /* border:1px solid #999; */
+        }
+        .wrap{
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        #inpbox{
+            width: 400px;
+            height: 372px;
+            resize:none;
+            font-size: 25px;
+            outline: 0;
+        }
+        .wrap #input button{
+            position: absolute;
+            bottom:0;
+            right:0;
+        }
+        #inpcon li{
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 25px;
+            margin-top: 10px;
+            border-bottom: 1px dotted #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="input">
+            <textarea id="inpbox" value="">
+
+            </textarea>
+            <button id="btn">按钮</button>
+        </div>
+        <ul id="inpcon">
+            <!-- <li>的违法</li>
+            <li>封为辅</li> -->
+        </ul>
+    </div>
+    <script>
+        let oInp = document.getElementById("inpbox"),
+            oBtn = document.getElementById("btn"),
+            oCon = document.getElementById("inpcon");
+        //给btn加点击事件
+        oBtn.onclick = function(){
+            let val = oInp.value;
+
+            oCon.innerHTML +="<li>"+val+"</li>";
+            oInp.value = "";
+        };
+    </script>
+</body>
+</html>

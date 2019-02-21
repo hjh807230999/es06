@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration:none;}
+    li{list-style:none;}
+  </style> 
+</head>
+<body>
+    <script>
+        /*
+            比较运算符：
+        *   ==   等   数字10与字符串10，返回值是true
+        *   ===  不全等     数字10与字符串10，返回值是false
+        *   两者区别：
+        *       ==      只比较值等不等，不会判断数据类型
+        *       ===     值与数据类型都得一样（首先判断数据类型，数据类型不一样直接false）
+        *       通常用 ===
+        *   ！=   不等
+        *   ！==  不全等
+        * */
+        // let a = 10;
+        // let b = "10";
+        // console.log( a==b );
+        // console.log( a===b );
+        let a = [10];
+        let b = [10];
+        console.log( a==b );
+        console.log( a===b );
+        console.log(a[0]===b[0]);
+        /*
+        * 基础数据类型(栈内存)：number  string  null  boolean  undefined  Symbol
+        * 引用数据类型（堆内存）：object
+        * 堆内存里面是把地址给a和b
+        *        console.log( a==b );   它们只比较地址a和b，不用管内容和值一不一样
+        * 对象数据类型在被存起来的时候是给地址
+        *
+        * 归纳：1.Symbol是独一无二的，肯定不等
+        *       2.number  string  null  boolean  undefined 这些是比较值等不等
+        *       3.object  比较地址等不等
+        * */
+        let c = [10];
+        let d = c;
+        console.log( c==d );
+        console.log( c===d );
+
+    </script>
+</body>
+</html>

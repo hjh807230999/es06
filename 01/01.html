@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div id="wrap" onclick="alert(123);">wrap</div>
+    <script>
+        alert("hello world!")
+
+
+        /*
+            alert()为弹窗
+            可以引入多个script文件
+            script也有行内样式，如onclick点击事件（此种写法不推荐）
+        */
+
+    </script>
+    <script src="1.js" type="text/javascript">
+        alert("my");
+        /*
+            html5里面不用写 type="text/javascript"，如果写必须写正确。（和style里面一样）
+            script标签引入外部js文件时，script里面再不能写任何东西，写的东西都是没有意义的。
+        */
+       /*
+        *严格区分大小写
+        *缩进
+        *语句结束的;
+        *语法字符为半角字符（字符串里面可以是任意字符），半角占一字节，全角占两个字节。\为转义字符，只写在字符串里面，可以输出那些有特殊意义的字符。
+       */
+    </script>
+    <a href="javascript:alert('8888');">666</a>
+        <!-- javascript:;等价于 javascript:void(0); -->
+        <a href="javascript:void(0);">no</a>
+                <!-- html是结构层上的
+                css是表现层上的
+                javascript是行为层上的
+                动态的页面也就是可以实现数据之间的交互
+                jquery是由js编写的库 -->
+
+
+        <script>
+            //console.log(123);
+            //console.log(456);
+            /*
+                console.log()为打印日志（常用）  也用于看对象的信息    console的意思是控制台
+                console用完记得注释掉，不然显得不专业
+                confirm也是弹窗的。
+                confirm 与 console的区别 ：可以选择取消，供用户选择
+            */
+           let a = confirm("你好吗？");
+           console.log(a);
+           /*
+                confirm 为确认框
+                confirm会把返回值给a
+                    点击确定  返回值为true
+                    点击取消  返回值false
+           */
+          let b =prompt("请输入内容");
+          console.log(b);  
+          /*
+                prompt 为输入框
+                confirm 和 prompt框基本不使用
+                调试主要用alert()和console.log()
+           */
+        </script>
+        <script>
+            //首先页面加载的时候就给我们需求的 节点 绑定一个事件反馈机制
+            document.getElementById("wrap").onclick = function(){
+                alert("你点我干啥？");
+            };
+            /*
+                document.getElementById在文档上获取ID名为wrap的元素，获取它在js里面的表现形式
+                称为元素节点
+                function是事件函数，触发onclick这个点击事件进行弹窗
+            */
+        </script>
+        <script>
+                
+            document.getElementById("wrap").innerHTML = "你好天空";
+            /*
+                通过js给元素添加内容;
+                =是赋值，把右边的内容给左边的机制
+            */
+        </script>        
+</body>
+</html>

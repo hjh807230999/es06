@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    <script>
+        //+号运算时  两边任意一边有字符串，那么都会进行隐式字符串转换，再进行拼接
+        // - / * % 都会装换成数字再进行运算
+        //出现不合理的运算之后，会出现NaN（not a number） NaN不是一个数字，但是属于数字类型
+        //布尔值和number进行运算时会将true转换为1，false转换为0
+        console.log(true + 1 );
+        console.log(false + 1 );
+        let oWrap = document.getElementById("wrap");
+        console.log(oWrap);
+        // oWrap.innerHTML = " <ul>" +
+        //                 "<li></li>"
+        //                  "</ul> ";
+        // 若要在字符串里面写标签，不支持换行，换行必须写+
+        //es6新增内容  模板字符串可以换行  ``
+        //模板字符串里面写变量写 ${x}
+        /*操作一个东西只能同过对象出发去操作
+            let oWrap = getElementById("wrap");
+            let oStyle = oWrap.style;
+            oStyle.width = "100px";
+        */
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    <button id="box">按钮</button>
+    <script>
+        //定义变量
+        let a = document.getElementById("wrap");
+        let b = document.getElementById("box");
+
+        a.onclick = function(){
+            a.innerHTML = "wrap被点击了";
+        }
+        b.onclick = function(){
+            a.innerHTML = "box被点击了";
+        }
+        /*
+            js的发展史：ECMAScript  简称：es
+            es5  定义变量用var
+            es2015 = es6（年份版本号）  定义变量用let
+            babel编译器可以将es6的代码全部装换成es5的版本
+
+            es5：var  function
+            es6: let  const（常量） function class(不常用)
+                常量不能重新复制
+            要么全部用es5的规则定义变量，要么全部用es6的规则定义变量，不要串着来
+            定义变量的时候都统一把变量名放在前面一起。
+
+            关于变量名的规定：
+                1.不能使用关键词  如 let let = 10; let是有意义的变量名
+                2.不能使用保留词  如 class  stract
+                3.不能使用js里面已经有意义的词 如 document ， alert
+                4.组成名字的字符最好是 数字（不能以数字开头）、字母、_、$ 这四种去组合（不能取-）
+                5.取名应该见名知意  如oWrap 是wrap节点 o代表节点
+                6.驼峰命名法 如 getElementById
+
+            数据类型：
+                1.number 数字型
+                2.string  字符串  `123`模板字符串  let x = "true"(为字符串)
+                3.boolean  布尔值  真true  假false
+                    如 let x = true;  
+                       let x = false;
+                4.undefined 未定义  如  let x; alert(x);
+                5.const x;是错误写法（常量第一次定义不允许没有值）
+                       如const x = undefined; 此赋值可行
+                6.null 空   let x = null;  可知后面是要存储对象的，只是暂时不知道要存储什么
+                        如 let x = null; 一系列操作后   x = document.getElementsById("wrap");
+                7.symbol  es6新增的一种数据类型  如 let x = Symbol(123);
+                                                   let y = Symbol(123);
+                                                   这两个完全不同，独一无二的值
+                8.object  对象   []是对象的一种
+                    如 let x = [10，5，6,true]; 数组,在[]里面存储一组数据
+                  数组的序号值是从0开始的
+                  二维数组
+                        let x = [
+                            10,
+                            [
+                                "阿飞",
+                                "乌拉",
+                                "小浪"
+                            ]
+                        ];
+
+        */
+        // let x = [10,5,true,6];
+
+        // console.log(x[2]);
+        let x = [
+                    10,
+                    [
+                        "阿飞",
+                        "乌拉",
+                        "小浪"
+                    ]
+                ];
+        console.log(x[1][0]);
+    </script>
+</body>
+</html>

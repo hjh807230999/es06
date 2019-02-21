@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div class="wrap">1</div>
+    <div id="wrap">2
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+    <div class="wrap">3</div>
+    <script>
+        // let x = {
+        //     name : "阿飞",
+        //     number : 20
+        // };
+        // let y = Symbol("age");
+        // x[y] = 18;
+        // console.log(x);
+        // console.log(x[y]);
+        // Symbol是独一无二的
+
+        /*
+            内置对象
+                console.log(document);
+                console.log(alert);
+            Symbol是es6新增的基本数据类型
+
+            初步理解类的概念： 1.可能会有多个对象拥有相同的类
+                              2.所有的对象都是通过类产生的
+            
+            函数 在数据类型上是属于object上的
+
+            function a(){};
+            a();
+            a();  让函数执行，写几个执行几次 a();是主动执行
+
+            写 document.onclick = a; 点击才能执行，是被动事件
+
+        */
+        /*
+        function a(){};
+
+        a.dachui = 18;
+
+        console.dir(a);    
+        只要是对象都可以通过上面的方式赋值，基础数据类型不能赋值
+        */
+
+        let a = [10,true];
+        let b = typeof a;
+        let c = function(){}; // 先定义后使用（推荐）
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof c);
+        //b是字符串类型
+        //typeof可以检测数据类型
+        // null是空指针，typeof会检测null为object型，事实上null还是空，出现null赋值给变量，预先就可以知道它要存储一个对象的。
+        //typeof在检测function时会返回function型，但是它属于对象类型，返回值只是区别它与别人的返回值不同，它是返回function
+        //  节点对象 console.dir(a); 获取html元素在js中的形式
+        let m = document.getElementsByClassName("wrap");
+        console.log(m);
+        console.log(m.length);
+        m[1].innerHTML = "afei";  
+        //getElementsByTagName("div");  获取标签
+        let oWrap = document.getElementById("wrap");
+        let zP = oWrap.getElementsByTagName("p");
+        console.log(zP);
+        let l = document.querySelectorAll("#wrap p");
+        console.log(l);
+        l[1].innerHTML = "1314";   
+    </script>
+</body>
+</html>
